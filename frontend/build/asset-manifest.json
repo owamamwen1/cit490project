@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/owamamwen1/cit490project/static/css/main.89b56289.css",
+    "main.js": "/owamamwen1/cit490project/static/js/main.623ca972.js",
+    "static/js/787.da818ae7.chunk.js": "/owamamwen1/cit490project/static/js/787.da818ae7.chunk.js",
+    "index.html": "/owamamwen1/cit490project/index.html",
+    "main.89b56289.css.map": "/owamamwen1/cit490project/static/css/main.89b56289.css.map",
+    "main.623ca972.js.map": "/owamamwen1/cit490project/static/js/main.623ca972.js.map",
+    "787.da818ae7.chunk.js.map": "/owamamwen1/cit490project/static/js/787.da818ae7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89b56289.css",
+    "static/js/main.623ca972.js"
+  ]
+}
