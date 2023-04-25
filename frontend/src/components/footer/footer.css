@@ -1,0 +1,17 @@
+    .footer{
+        background-color: rgb(202, 196, 188);
+    }
+    .footer-content {
+      display: flex;
+      color: black;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin: 20px;
+    }
+  
+    .footer-bottom {
+      text-align: center;
+      margin: 20px;
+    }
