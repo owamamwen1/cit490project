@@ -1,0 +1,112 @@
+.newDonor{
+    flex: 9;
+}  
+.newDonorWrapper {
+    padding: 20px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .newDonorImg {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+   .badge {
+    position: relative;
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+    text-align: right;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgb(72, 68, 68);
+  }
+
+  .newDonorTitle {
+    text-align: center;
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 28px;
+  }
+  
+  .newDonorTitleInput {
+    margin: 10px;
+    font-family: "Lora", serif;
+    font-size: 28px;
+    text-align: center;
+    border: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .newDonorTitleInput:focus {
+    outline: none;
+  }
+  
+  .newDonorEdit {
+    float: right;
+    font-size: 16px;
+  }
+  
+  .newDonorIcon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .newDonorIcon:first-child {
+    color: teal;
+  }
+  
+  .newDonorIcon:last-child {
+    color: tomato;
+  }
+  
+  .newDonorInfo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-family: "Varela Round", sans-serif;
+    color: #b39656;
+  }
+  
+  .newDonorDesc {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .newDonorDesc::first-letter {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  
+  .newDonorDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  .newDonorDescInput:focus {
+    outline: none;
+  }
+  .newDonorButton {
+    width: 100px;
+    border: none;
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+  }
+  
