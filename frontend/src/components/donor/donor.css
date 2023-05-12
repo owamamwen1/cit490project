@@ -1,11 +1,13 @@
 .donor {
-    width: 385px;
+    /* width: 385px; */
+    width: 250px;
     margin: 0px 25px 40px 25px;
   }
   
   .donorImg {
     width: 100%;
-    height: 280px;
+    height: 200px;
+    /* height: 280px; */
     object-fit: cover;
     border-radius: 7px;
   }

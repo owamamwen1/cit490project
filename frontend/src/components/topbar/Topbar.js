@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import "./topbar.css";
 
 export default function TopBar() {
-
+ const user = false;
   return (
     <div className="top">
       <div className="topLeft">
@@ -11,19 +12,26 @@ export default function TopBar() {
       </div>
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem">HOME</li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">FOODS</li>
-          <li className="topListItem">DONORS</li>
-          <li className="topListItem">LOGOUT</li>
+          <li className="topListItem"><Link to="/" className="link">HOME</Link></li>
+          <li className="topListItem"><Link to="/" className="link">ABOUT</Link></li>
+          <li className="topListItem"><Link to="/" className="link">FOODS</Link></li>
+          <li className="topListItem"><Link to="/donor" className="link">DONOR</Link></li>
+          <li className="topListItem">
+            {user && "LOGOUT"}
+          </li>
         </ul>
       </div>
       <div className="topRight">
-      <img className="topImg" src='https://avatars.githubusercontent.com/u/24244287?v=4' alt="" />
-          <ul className="topList">
-            {/* <li className="topListItem">LOGIN</li> */}
-            {/* <li className="topListItem">REGISTER</li> */}
-          </ul>
+        {user ? (<img className="topImg" src='https://avatars.githubusercontent.com/u/24244287?v=4' alt="" />) 
+        : 
+        (
+        <ul className="topList">
+          <li className="topListItem">
+            <Link className="link" to="/login">LOGIN</Link></li>
+          <li className="topListItem">
+            <Link className="link" to="/register">REGISTER</Link></li>
+        </ul>
+        )}
       </div>
     </div>
   );
