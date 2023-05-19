@@ -8,12 +8,15 @@ import "./home.css";
 import { useLocation } from "react-router-dom";
 
 export default function Home() {
+   // baseURL
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
+
   const [donors, setDonors] = useState([]);
   const {search} = useLocation();
 
   useEffect(()=>{
     const fetchPosts = async ()=> {
-     const res = await axios.get("https://example.com/donors"+search);
+     const res = await axios.get(`${HOST_BASE}/donors`+search);
     setDonors(res.data);
     }
     fetchPosts();

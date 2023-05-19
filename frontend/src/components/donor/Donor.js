@@ -2,11 +2,17 @@ import{ Link } from 'react-router-dom';
 import "./donor.css";
 
 function Donor({donor}) {
+
+    // baseURL
+    const HOST_BASE = "https://owas-senior-project.onrender.com";
+
+  const pfile = `${HOST_BASE}/images/`;
+
     return (
      <div className="donor">
-       <Link className='link' to={`/donor/${donor._id}`}>
+       <Link className='link' to={`/view/${donor._id}`}>
       {donor.photo && (
-        <img className="donorImg" src={donor.photo} alt="" />
+        <img className="donorImg" src={pfile + donor.photo} alt="" />
       )}
       <span className='badge'>{donor.status}</span>
         <div className="donorInfo">
