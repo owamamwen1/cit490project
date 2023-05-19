@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import "./sidebar.css";
 
 export default function Sidebar() {
+  // baseURL
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
+
   const [cats, setCats] = useState([]);
 
   useEffect(()=>{
       const getCagetory = async ()=>{
-          const res = await axios.get("https://example.com/categories");
+          const res = await axios.get(`${HOST_BASE}/categories`);
           setCats(res.data);
       };
       getCagetory();
