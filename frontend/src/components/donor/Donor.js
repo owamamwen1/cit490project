@@ -4,7 +4,7 @@ import "./donor.css";
 function Donor({donor}) {
 
     // baseURL
-    const HOST_BASE = "https://owas-senior-project.onrender.com";
+    const HOST_BASE = "http://localhost:8080";
 
   const pfile = `${HOST_BASE}/images/`;
 

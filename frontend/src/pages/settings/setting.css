@@ -83,3 +83,8 @@
   .settingFileOutpit{
     display: none;
   }
+  .user-updated{
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+  }
