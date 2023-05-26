@@ -23,7 +23,7 @@ function App() {
       <Route path="/register">{ user ? <Home/> : <Register/>}</Route>
       <Route path="/login">{ user ? <Home/> : <Login/>}</Route>
       <Route path="/donor">{ user ? <WriteDonor/> : <Register/>}</Route>
-      <Route path="/setting">{ user ? <Setting/> : <Register/>}</Route>
+      <Route path="/settings">{ user ? <Setting/> : <Register/>}</Route>
       <Route path="/view/:donorId">
         <Single/>
       </Route>
