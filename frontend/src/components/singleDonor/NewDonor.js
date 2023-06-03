@@ -11,12 +11,17 @@ function NewDonor() {
     const [donor, setDonor] = useState({});
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [region, setRegion] = useState("");
+    const [country, setCountry] = useState("");
     const [updateMode, setUpdateMode] = useState(false)
 
     const {user} = useContext(Context);
 
     // baseURL
-    const HOST_BASE = "http://localhost:8080";
+    const HOST_BASE = "https://owas-senior-project.onrender.com";
 
     const pfile = `${HOST_BASE}/images/`;
 
@@ -26,6 +31,11 @@ function NewDonor() {
             setDonor(res.data);
             setTitle(res.data.title);
             setDesc(res.data.desc);
+            setEmail(res.data.email);
+            setPhone(res.data.phone);
+            setAddress(res.data.address);
+            setRegion(res.data.region);
+            setCountry(res.data.country);
         };
         getDonor();
     },[path]);
@@ -59,7 +69,10 @@ function NewDonor() {
             <img className='newDonorImg' src={pfile + donor.photo} alt=''/>
             )}
             {
-                updateMode ? ( <input className='newDonorTitleInput' type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>)
+                updateMode ? 
+                ( 
+                <input className='newDonorTitleInput' type="text" value={title} onChange={(e)=> setTitle(e.target.value)}/>
+                )
                 :(
                     <h1 className='newDonorTitle'>
                     {title}
@@ -83,8 +96,39 @@ function NewDonor() {
                 <span className='newDonorDate'>{new Date(donor.createdAt).toDateString()}</span>
             </div>
             {
-                updateMode ? ( <textarea className='newDonorDescInput' value={desc} onChange={(e)=> setDesc(e.target.value)}/>) :(
+                updateMode ? ( 
+                <textarea className='newDonorDescInput' value={desc} onChange={(e)=> setDesc(e.target.value)}/>) :(
                     <p className='newDonorDesc'>{desc}</p>
+                )
+            }
+            {
+                updateMode ? ( 
+                <input className='writeInput' value={email} onChange={(e)=> setEmail(e.target.value)}/>) :(
+                    <p className='writeInputUpdated'>Email: {email}</p>
+                )
+            }
+            {
+                updateMode ? ( 
+                <input className='writeInput' value={phone} onChange={(e)=> setPhone(e.target.value)}/>) :(
+                    <p className='writeInputUpdated'>Phone: {phone}</p>
+                )
+            }
+            {
+                updateMode ? ( 
+                <input className='writeInput' value={address} onChange={(e)=> setAddress(e.target.value)}/>) :(
+                    <p className='writeInputUpdated'>Address: {address}</p>
+                )
+            }
+            {
+                updateMode ? ( 
+                <input className='writeInput' value={region} onChange={(e)=> setRegion(e.target.value)}/>) :(
+                    <p className='writeInputUpdated'>Region: {region}</p>
+                )
+            }
+             {
+                updateMode ? ( 
+                <input className='writeInput' value={country} onChange={(e)=> setCountry(e.target.value)}/>) :(
+                    <p className='writeInputUpdated'>Country: {country}</p>
                 )
             }
             { updateMode &&

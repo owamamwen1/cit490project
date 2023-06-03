@@ -5,7 +5,7 @@ import "./sidebar.css";
 
 export default function Sidebar() {
   // baseURL
-  const HOST_BASE = "http://localhost:8080";
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
 
   const [cats, setCats] = useState([]);
 

@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 
 export default function TopBar() {
   // baseURL
-  const HOST_BASE = "http://localhost:8080";
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
   // Picture profile
   const pfile = `${HOST_BASE}/images/`;
 

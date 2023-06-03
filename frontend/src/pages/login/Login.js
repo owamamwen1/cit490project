@@ -6,7 +6,7 @@ import "./login.css";
 
 export default function Login() {
    // baseURL
-  const HOST_BASE = "http://localhost:8080";
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
 
   const userRef = useRef();
   const passwordRef = useRef();
