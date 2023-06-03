@@ -19,6 +19,11 @@
     display: flex;
     align-items: center;
   }
+  .writeFormGroupColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .writeIcon {
     width: 25px;

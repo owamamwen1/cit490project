@@ -530,7 +530,7 @@
       },
       "donor": {
         "type": "object",
-        "required": ["username", "title", "desc","status"],
+        "required": ["username", "title", "desc","email", "status"],
         "properties": {
           "username": {
             "type": "string"
@@ -544,9 +544,24 @@
           "photo": {
             "type": "string"
           },
-          "status": {
+          "email": {
             "type": "string"
           },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "conutry": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },       
           "categories": {
             "type": "object"
           }

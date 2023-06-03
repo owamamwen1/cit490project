@@ -28,6 +28,22 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    phone: {
+      type: Number,
+      required: false,
+    },
+    address: {
+      type: String,
+      required: false,
+    },
+    region: {
+      type: String,
+      required: false,
+    },
+    country: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );

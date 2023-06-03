@@ -5,11 +5,16 @@ import { Context } from '../../context/Context';
 
 function WriteDonor() {
   // baseURL
-  const HOST_BASE = "http://localhost:8080";
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [region, setRegion] = useState("");
+  const [country, setCountry] = useState("");
  
   const {user} = useContext(Context);
 
@@ -20,6 +25,12 @@ function WriteDonor() {
       title,
       desc,
      status,
+     email,
+     phone,
+     address,
+     region,
+     country,
+
     };
     if(file){
       const data = new FormData();
@@ -65,6 +76,13 @@ function WriteDonor() {
             </div>
             <div className='writeFormGroup'>
                 <textarea placeholder='Please describe the food...' type='text' className='writeInput writeText' onChange={(e)=> setDesc(e.target.value)}></textarea>
+            </div>
+            <div className='writeFormGroupColumn'>
+            <input type='email' placeholder='john@donor.com' className='writeInput' autoFocus={true} onChange={(e)=> setEmail(e.target.value)}/>
+            <input type='number' placeholder='343456545646' className='writeInput' autoFocus={true} onChange={(e)=> setPhone(e.target.value)}/>
+            <input type='text' placeholder='12 staint-merri, paris' className='writeInput' autoFocus={true} onChange={(e)=> setAddress(e.target.value)}/>
+            <input type='text' placeholder='Île-de-France' className='writeInput' autoFocus={true} onChange={(e)=> setRegion(e.target.value)}/>
+            <input type='text' placeholder='France' className='writeInput' autoFocus={true} onChange={(e)=> setCountry(e.target.value)}/>
             </div>
             <div className='writeFormGroup'>
             <button className='writeSubmit' type='submit'>Publish</button>

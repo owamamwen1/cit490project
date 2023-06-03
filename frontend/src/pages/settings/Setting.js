@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Setting() {
   // baseURL
-  const HOST_BASE = "http://localhost:8080";
+  const HOST_BASE = "https://owas-senior-project.onrender.com";
   // Picture profile
   const pfile = `${HOST_BASE}/images/`;
 
@@ -14,6 +14,10 @@ function Setting() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [region, setRegion] = useState("");
+  const [country, setCountry] = useState("");
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
@@ -26,6 +30,10 @@ function Setting() {
       username,
       email,
      password,
+     phone,
+     address,
+     region,
+     country
     };
     if(file){
       const data = new FormData();
@@ -68,6 +76,14 @@ function Setting() {
                 <input type='email' placeholder={user.email} onChange={(e)=> setEmail(e.target.value)}/>
                 <label>Password</label>
                 <input type='password' onChange={(e)=> setPassword(e.target.value)}/>
+                <label>Phone</label>
+                <input type='number' placeholder={user.phone} onChange={(e)=> setPhone(e.target.value)}/>
+                <label>Address</label>
+                <input type='text' placeholder={user.address} onChange={(e)=> setAddress(e.target.value)}/>
+                <label>Region</label>
+                <input type='text' placeholder={user.region} onChange={(e)=> setRegion(e.target.value)}/>
+                <label>Country</label>
+                <input type='text' placeholder={user.country} onChange={(e)=> setCountry(e.target.value)}/>
                 <button className='settingSubmit' type='submit'>Update</button>
                 {success && (
                     <span className='user-updated'>Profile has been updated...</span>
