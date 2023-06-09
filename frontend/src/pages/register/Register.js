@@ -10,7 +10,7 @@ export default function Register() {
   const [error, setError] = useState(false);
 
   // baseURL
-  const HOST_BASE = "https://owas-senior-project.onrender.com";
+  const HOST_BASE = "http://localhost:8080";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

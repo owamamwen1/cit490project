@@ -21,7 +21,7 @@ function NewDonor() {
     const {user} = useContext(Context);
 
     // baseURL
-    const HOST_BASE = "https://owas-senior-project.onrender.com";
+    const HOST_BASE = "http://localhost:8080";
 
     const pfile = `${HOST_BASE}/images/`;
 
@@ -63,7 +63,16 @@ function NewDonor() {
   return (
     <div className='newDonor'>
         <div className='newDonorWrapper'>
-            <div className='act'>
+        <ul class="m-d expand-list">
+	<li data-md-content="500">
+		<label name="tab" for="tab1" tabindex="-1" class="tab_lab" role="tab">Donor Details</label>
+		<input type="checkbox" checked class="tab" id="tab1" tabindex="0" />
+		<span class="open-close-icon">
+			<i class="fas fa-plus"></i>
+			<i class="fas fa-minus"></i>
+		</span>
+		<div class="content">
+        <div className='act'>
             <span className='badge'>{donor.status}</span>
             {donor.photo && (
             <img className='newDonorImg' src={pfile + donor.photo} alt=''/>
@@ -95,13 +104,28 @@ function NewDonor() {
                  </span>
                 <span className='newDonorDate'>{new Date(donor.createdAt).toDateString()}</span>
             </div>
-            {
+        </div>
+    </li>
+    <li data-md-content="300">
+			<label name="tab" for="tab2" tabindex="-1" class="tab_lab" role="tab">Description</label>
+			<input type="checkbox" class="tab" id="tab2" tabindex="0" />
+			<span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+			<div class="content">
+                {
                 updateMode ? ( 
                 <textarea className='newDonorDescInput' value={desc} onChange={(e)=> setDesc(e.target.value)}/>) :(
                     <p className='newDonorDesc'>{desc}</p>
                 )
             }
-            {
+        </div>
+    </li>
+    <li data-md-content="600">
+			<label name="tab" for="tab3" tabindex="-1" class="tab_lab" role="tab">Address</label>
+			<input type="checkbox" class="tab" id="tab3" tabindex="0" />
+			<span class="open-close-icon"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+      <div class="content">
+        <p>
+        {
                 updateMode ? ( 
                 <input className='writeInput' value={email} onChange={(e)=> setEmail(e.target.value)}/>) :(
                     <p className='writeInputUpdated'>Email: {email}</p>
@@ -131,7 +155,12 @@ function NewDonor() {
                     <p className='writeInputUpdated'>Country: {country}</p>
                 )
             }
-            { updateMode &&
+        </p>
+
+			</div>
+    </li>
+</ul>
+{ updateMode &&
              <button className='newDonorButton' onClick={handleUpdate}>Update</button>
             }
         </div>
@@ -140,3 +169,14 @@ function NewDonor() {
 }
 
 export default NewDonor;
+
+
+
+
+
+
+
+
+
+
+        

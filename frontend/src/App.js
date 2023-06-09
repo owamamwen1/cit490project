@@ -9,6 +9,7 @@ import Home from './pages/home/Home';
 import Single from './pages/single/Single';
 import { useContext } from 'react';
 import { Context } from './context/Context';
+import About from './pages/about/About';
 
 function App() {
   const {user} = useContext(Context);
@@ -24,6 +25,7 @@ function App() {
       <Route path="/login">{ user ? <Home/> : <Login/>}</Route>
       <Route path="/donor">{ user ? <WriteDonor/> : <Register/>}</Route>
       <Route path="/settings">{ user ? <Setting/> : <Register/>}</Route>
+      <Route path="/about"><About/></Route>
       <Route path="/view/:donorId">
         <Single/>
       </Route>

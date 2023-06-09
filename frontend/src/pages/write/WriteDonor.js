@@ -5,7 +5,7 @@ import { Context } from '../../context/Context';
 
 function WriteDonor() {
   // baseURL
-  const HOST_BASE = "https://owas-senior-project.onrender.com";
+  const HOST_BASE = "http://localhost:8080";
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
