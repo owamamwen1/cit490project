@@ -6,7 +6,7 @@ import axios from "axios";
 
 function Setting() {
   // baseURL
-  const HOST_BASE = "https://owas-senior-project.onrender.com";
+  const HOST_BASE = "http://localhost:8080";
   // Picture profile
   const pfile = `${HOST_BASE}/images/`;
 
