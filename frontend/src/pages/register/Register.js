@@ -7,6 +7,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorinput, setErrorinput] = useState('');
   const [error, setError] = useState(false);
 
   // baseURL
@@ -14,6 +15,23 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (username === '') {
+      setErrorinput('Please enter your username.');
+      return;
+    }
+    if (email === '') {
+      setErrorinput('Please enter your email.');
+      return;
+    }
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(email)) {
+      setErrorinput('Invalid email.');
+      return;
+    }
+    if (password === '') {
+      setErrorinput('Please enter your password.');
+      return;
+    }
     setError(false);
     try{
       const res = await axios.post(`${HOST_BASE}/auth/register`,{
@@ -40,6 +58,7 @@ export default function Register() {
         <label>Password</label>
         <input type="password" className="registerInput" placeholder="Enter your password..."
         onChange={e=>setPassword(e.target.value)}/>
+        {errorinput && <p className="span">{errorinput}</p>}
         <button className="registerButton" type="submit">Register</button>
       </form>
       {error && <span className="error">Something went wrong!</span>}

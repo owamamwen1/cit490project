@@ -15,8 +15,11 @@ export default function Home() {
 
   useEffect(()=>{
     const fetchPosts = async ()=> {
-     const res = await axios.get(`${HOST_BASE}/donors`+search);
-    setDonors(res.data);
+     await axios.get(`${HOST_BASE}/donors`+search)
+     .then(datares => {
+      setDonors(datares.data);
+     })
+     .catch(console.error)
     }
     fetchPosts();
   },[search]);
@@ -25,7 +28,7 @@ export default function Home() {
     <>
       <Header />
       <div className="home">
-        <Donors donors={donors}/>
+        <Donors donors={donors}/>   
         <Sidebar />
       </div>
       <Footer/>

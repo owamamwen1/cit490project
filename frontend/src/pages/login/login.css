@@ -23,6 +23,7 @@
   }
   
   .loginInput {
+    width: 100%;
     padding: 10px;
     background-color: white;
     border: none;
@@ -30,6 +31,8 @@
   
   .loginButton {
     margin-top: 20px;
+    height: 100%;
+    width: 200px;
     cursor: pointer;
     background-color: lightcoral;
     border: none;
@@ -44,7 +47,7 @@
   }
   
   .loginRegisterButton {
-    position: absolute;
+    /* position: absolute; */
     top: 60px;
     right: 20px;
     background-color: teal;
@@ -54,4 +57,13 @@
     color: white;
     border-radius: 10px;
   }
-  
+
+  .span{
+    font-size: 14px;
+    /* padding: 3px; */
+    color: red;
+}
+/* 
+input:invalid{
+    border: 1px solid red;
+} */

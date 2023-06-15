@@ -16,9 +16,9 @@ export default function TopBar() {
 
   useEffect(() => {
     let handler = (e)=>{
-      if(!menuRef.current.contains(e.target)){
+      if(!menuRef.current?.contains(e.target.value)){
         setOpen(false);
-        console.log(menuRef.current);
+        // console.log(menuRef.current);
       }      
     };
 
