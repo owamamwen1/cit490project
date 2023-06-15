@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import axios from "axios";
 import './writeDonor.css';
 import { Context } from '../../context/Context';
@@ -25,6 +25,7 @@ function WriteDonor() {
       title,
       desc,
      status,
+     categories,
      email,
      phone,
      address,
@@ -59,6 +60,29 @@ function WriteDonor() {
     setStatus(e.target.value);
   };
 
+  // Select food categories
+  const [cats, setCats] = useState([]);
+  const [categories, setCategories] = useState([{name:"Pizza"}]);
+
+  useEffect(()=>{
+      const getCagetory = async ()=>{
+          const res = await axios.get(`${HOST_BASE}/categories`);
+          setCats(res.data);
+      };
+      getCagetory();
+  },[]);
+
+  //  const getInitialCat = () => {
+  //   const cat = [{name:"Pizza"}];
+  //   // const cat = "Pizza";
+  //   return cat;
+  // };
+
+  const handleCategoryChange = (e) => {
+    setCategories(e.target.value);
+  };
+
+
   return (
     <div className='write'>
       {file && (
@@ -72,6 +96,13 @@ function WriteDonor() {
               <select value={status} onChange={handleChange}>
                   <option value="available">available</option>
                   <option value="unavailable">unavailable</option>
+                </select>
+                &nbsp;&nbsp;
+                <select value={categories} onChange={handleCategoryChange}>
+                {cats.map((d)=>(
+                // <option value={`[{name:${d.name}}]`}>{d.name}</option>
+                <option value={d.name}>{d.name}</option>
+                ))}
                 </select>
             </div>
             <div className='writeFormGroup'>
