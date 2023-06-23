@@ -51,7 +51,7 @@ function WriteDonor() {
 
   // Select food Status
   const getInitialState = () => {
-    const status = "available";
+    const status = "Available";
     return status;
   };
   const [status, setStatus] = useState(getInitialState);
@@ -93,14 +93,14 @@ function WriteDonor() {
                 <label htmlFor='fileInput'><i className='writeIcon fas fa-plus'></i></label>
                 <input className='fileOutpit' type='file' name='' id='fileInput' onChange={(e)=> setFile(e.target.files[0])}/>
                 <input type='text' placeholder='title' className='writeInput' autoFocus={true} onChange={(e)=> setTitle(e.target.value)}/>
-              <select value={status} onChange={handleChange}>
-                  <option value="available">available</option>
-                  <option value="unavailable">unavailable</option>
+            </div>
+            <div className='writeFormGroupSelect'>
+            <select value={status} onChange={handleChange}>
+                  <option value="Available">Available</option>
+                  <option value="Unavailable">Unavailable</option>
                 </select>
-                &nbsp;&nbsp;
                 <select value={categories} onChange={handleCategoryChange}>
                 {cats.map((d)=>(
-                // <option value={`[{name:${d.name}}]`}>{d.name}</option>
                 <option value={d.name}>{d.name}</option>
                 ))}
                 </select>
