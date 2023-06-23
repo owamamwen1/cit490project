@@ -1,0 +1,14 @@
+.help {
+    display: flex;
+  }
+  
+  .helpWrapper {
+    flex: 9;
+    padding: 20px;
+  }
+  .helpTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }

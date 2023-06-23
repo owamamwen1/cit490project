@@ -19,6 +19,14 @@
     display: flex;
     align-items: center;
   }
+  .writeFormGroupSelect {
+    margin-left: 150px;
+    margin-right: 203px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .writeFormGroupColumn {
     display: flex;
     flex-direction: column;

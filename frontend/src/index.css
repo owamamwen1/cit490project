@@ -1,0 +1,64 @@
+/* Input Field Styles */
+input, textarea {
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  select {
+    padding: 8px;
+    border-radius: 2px;
+    margin-bottom: 13px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input Field Hover Effect */
+  input:hover {
+    border-color: #888;
+  }
+  
+  /* Input Field Focus Styles */
+  input:focus {
+    border-color: #5b9dd9;
+    outline: none;
+    box-shadow: 0 0 5px #5b9dd9;
+  }
+  
+  /* Placeholder Text Styles */
+  input::placeholder {
+    color: #aaa;
+  }
+  
+  /* Input Field Validation Styles */
+  /* input:valid {
+    border-color: #0f0;
+  } */
+  
+  input:invalid {
+    border-color: #f00;
+  }
+  
+  /* Disabled Input Field Styles */
+  input:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+  }
+  
+  /* Input Field with Error Styles */
+  input.error {
+    border-color: #f00;
+  }
+  
+  input.error:focus {
+    box-shadow: 0 0 5px #f00;
+  }
+  
+  input.error::placeholder {
+    color: #f00;
+  }
+  

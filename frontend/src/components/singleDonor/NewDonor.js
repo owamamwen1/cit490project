@@ -18,6 +18,17 @@ function NewDonor() {
     const [country, setCountry] = useState("");
     const [updateMode, setUpdateMode] = useState(false)
 
+    // Select food Status
+    const getInitialState = () => {
+        const status = "available";
+        return status;
+    };
+    const [status, setStatus] = useState(getInitialState);
+
+    const handleChange = (e) => {
+        setStatus(e.target.value);
+    };
+
     const {user} = useContext(Context);
 
     // baseURL
@@ -52,9 +63,15 @@ function NewDonor() {
     const handleUpdate = async () => {
         try{
             await axios.put(`${HOST_BASE}/donors/${donor._id}`, {
-                username: user.username, 
+                username: user.username,
+                status,
                 title, 
                 desc,
+                email,
+                phone,
+                address,
+                region,
+                country
             });
             setUpdateMode(false);
         }catch(err){};
@@ -73,7 +90,17 @@ function NewDonor() {
 		</span>
 		<div class="content">
         <div className='act'>
-            <span className='badge'>{donor.status}</span>
+            <span className='badge'>
+            {
+                updateMode ? ( 
+                <select value={status} onChange={handleChange}>
+                <option value="available">available</option>
+                <option value="unavailable">unavailable</option>
+                </select>) :(
+                <span>{donor.status}</span>
+                )
+            }
+            </span>
             {donor.photo && (
             <img className='newDonorImg' src={pfile + donor.photo} alt=''/>
             )}
@@ -127,31 +154,31 @@ function NewDonor() {
         <p>
         {
                 updateMode ? ( 
-                <input className='writeInput' value={email} onChange={(e)=> setEmail(e.target.value)}/>) :(
+                <input className='writeInput' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email:'/>) :(
                     <p className='writeInputUpdated'>Email: {email}</p>
                 )
             }
             {
                 updateMode ? ( 
-                <input className='writeInput' value={phone} onChange={(e)=> setPhone(e.target.value)}/>) :(
+                <input className='writeInput' value={phone} onChange={(e)=> setPhone(e.target.value)} placeholder='Phone:'/>) :(
                     <p className='writeInputUpdated'>Phone: {phone}</p>
                 )
             }
             {
                 updateMode ? ( 
-                <input className='writeInput' value={address} onChange={(e)=> setAddress(e.target.value)}/>) :(
+                <input className='writeInput' value={address} onChange={(e)=> setAddress(e.target.value)} placeholder='Address:'/>) :(
                     <p className='writeInputUpdated'>Address: {address}</p>
                 )
             }
             {
                 updateMode ? ( 
-                <input className='writeInput' value={region} onChange={(e)=> setRegion(e.target.value)}/>) :(
+                <input className='writeInput' value={region} onChange={(e)=> setRegion(e.target.value)} placeholder='Region:'/>) :(
                     <p className='writeInputUpdated'>Region: {region}</p>
                 )
             }
              {
-                updateMode ? ( 
-                <input className='writeInput' value={country} onChange={(e)=> setCountry(e.target.value)}/>) :(
+                updateMode ? (
+                <input className='writeInput' value={country} onChange={(e)=> setCountry(e.target.value)} placeholder='Country:'/>) :(
                     <p className='writeInputUpdated'>Country: {country}</p>
                 )
             }

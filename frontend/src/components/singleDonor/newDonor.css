@@ -112,6 +112,11 @@
     align-self: flex-end;
     margin-top: 20px;
   }
+  .writeInput{
+    padding: 8px;
+    border-radius: 2px;
+    margin-bottom: 13px;
+  }
   .writeInputUpdated {
     font-size: 20px;
     border: none;
@@ -156,6 +161,7 @@
   cursor: pointer;
 }
 .m-d label[class^="tab"]{
+  margin-left: 10px;
     font-weight: bold;
 }
 .m-d .content{
