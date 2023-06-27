@@ -59,7 +59,8 @@ function Setting() {
         <div className='settingWrapper'>
             <div className='settingTitle'>
                 <span className='settingUpdateTitle'>Update Your Account</span>
-                <span className='settingDeleteTitle'>Delete Account</span>
+                <span className='settingDeleteTitle'>DonorType: {user.donorType}</span>
+                {/* <span className='settingDeleteTitle'>Delete Account</span> */}
             </div>  
             <form className='settingForm' onSubmit={handleUpdatedUserSubmit}>
                 <label>Profile Picture</label>

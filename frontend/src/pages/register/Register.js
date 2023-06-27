@@ -13,6 +13,16 @@ export default function Register() {
   // baseURL
   const HOST_BASE = "http://localhost:8080";
 
+      // Select donor Stype
+      const getInitialState = () => {
+        const donorType = "Personal";
+         return donorType;
+        };
+        const [donorType, setDonorType] = useState(getInitialState);
+      const handleChange = (e) => {
+         setDonorType(e.target.value);
+      };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (username === '') {
@@ -38,13 +48,13 @@ export default function Register() {
         username,
         email,
         password,
+        donorType,
       });
       res.data && window.location.replace("/login");
     }catch (err){
       setError(true);
     }
   };
-
   return (
     <div className="register">
       <span className="registerTitle">Register</span>
@@ -58,6 +68,13 @@ export default function Register() {
         <label>Password</label>
         <input type="password" className="registerInput" placeholder="Enter your password..."
         onChange={e=>setPassword(e.target.value)}/>
+        <label>DonorType</label>
+        <div>
+        <select value={donorType} onChange={handleChange}>
+          <option value="Personal">Personal</option>
+           <option value="Organisation">Organisation</option>
+          </select>
+        </div>
         {errorinput && <p className="span">{errorinput}</p>}
         <button className="registerButton" type="submit">Register</button>
       </form>
