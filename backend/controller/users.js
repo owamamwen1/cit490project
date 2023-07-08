@@ -3,6 +3,17 @@ const User = require("../models/user");
 const Donor = require("../models/donor");
 const bcrypt = require("bcrypt");
 
+// GET ALL
+router.get("/", async (req, res) => {
+  try{
+    const user = await User.find();
+    res.status(200).json(user);
+  }
+  catch(err){
+    res.status(500).json(err);
+  }
+});
+
 //UPDATE
 router.put("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {

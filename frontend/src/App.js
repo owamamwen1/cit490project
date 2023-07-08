@@ -11,6 +11,8 @@ import { useContext } from 'react';
 import { Context } from './context/Context';
 import About from './pages/about/About';
 import Help from './pages/help/Help';
+import ViewUser from './pages/view-user/ViewUser';
+import Unauthorize from './pages/unauthorize/Unauthorize';
 
 function App() {
   const {user} = useContext(Context);
@@ -27,6 +29,7 @@ function App() {
       <Route path="/donor">{ user ? <WriteDonor/> : <Register/>}</Route>
       <Route path="/settings">{ user ? <Setting/> : <Register/>}</Route>
       <Route path="/help">{ user ? <Help/> : <Register/>}</Route>
+      <Route path="/users">{ user?.userRole === "Admin" ?<ViewUser/> : <Unauthorize/>}</Route>
       <Route path="/about"><About/></Route>
       <Route path="/view/:donorId">
         <Single/>
