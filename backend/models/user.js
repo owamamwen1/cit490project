@@ -24,6 +24,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    userRole: {
+      type: String,
+      default: "user",
+    },
     donorType: {
       type: String,
       required: true,
@@ -47,6 +51,10 @@ const UserSchema = new mongoose.Schema(
     country: {
       type: String,
       required: false,
+    },
+    userActive: {
+      type: Boolean,
+      default: true,
     },
   },
   { timestamps: true }
