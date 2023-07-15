@@ -3,6 +3,7 @@ import Sidebar from '../../components/sidebar/Sidebar';
 import './setting.css';
 import { Context } from '../../context/Context';
 import axios from "axios";
+import TopBar from '../../components/topbar/Topbar';
 
 function Setting() {
   // baseURL
@@ -55,6 +56,8 @@ function Setting() {
   }
   
   return (
+    <div>
+      <TopBar/>
     <div className='setting'>
         <div className='settingWrapper'>
             <div className='settingTitle'>
@@ -92,6 +95,7 @@ function Setting() {
             </form>
         </div>
         <Sidebar/>
+    </div>
     </div>
   );
 }

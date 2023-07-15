@@ -60,7 +60,7 @@ export default function TopBar() {
       <div className="topRight">
         {user ? (<div className='menu-container' ref={menuRef}><div className='menu-trigger' onClick={()=>{setOpen(!open)}}><img className='topImg' src={pfile+user.profilePic} alt=""></img></div><div className={`dropdown-menu ${open? 'active' : 'inactive'}`} ><h3>{user.firstName}<br/><span>{user.email}</span></h3><ul>
           <DropdownItem img = {edit} text = {"Edit Profile"} link = {"/settings"}/>
-          <DropdownItem img = {settings} text = {"Settings"} link = {"/users"}/>
+          <DropdownItem img = {settings} text = {"Settings"} link = {"/dashboard"}/>
           <DropdownItem img = {help} text = {"Helps"} link = {"/help"}/>
           <span onClick={handleLogout}>
           <DropdownItem img = {logout} text = {user && "logout"}/>

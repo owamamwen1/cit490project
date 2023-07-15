@@ -1,9 +1,12 @@
 import React from 'react';
 import './help.css';
 import Sidebar from '../../components/sidebar/Sidebar';
+import TopBar from '../../components/topbar/Topbar';
 
 function Help() {
   return (
+    <div>
+    <TopBar/>
     <div className='help'>
         <div className='helpWrapper'>
             <div className='helpTitle'>
@@ -53,6 +56,7 @@ function Help() {
              </p>
         </div>
         <Sidebar/>
+    </div>
     </div>
   );
 }

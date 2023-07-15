@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import axios from "axios";
 import './writeDonor.css';
 import { Context } from '../../context/Context';
+import TopBar from '../../components/topbar/Topbar';
 
 function WriteDonor() {
   // baseURL
@@ -84,6 +85,8 @@ function WriteDonor() {
 
 
   return (
+    <div>
+    <TopBar/>
     <div className='write'>
       {file && (
         <img className='writeImg' src={URL.createObjectURL(file)} alt=''/>
@@ -119,6 +122,7 @@ function WriteDonor() {
             <button className='writeSubmit' type='submit'>Publish</button>
             </div>
         </form>
+    </div>
     </div>
   );
 }

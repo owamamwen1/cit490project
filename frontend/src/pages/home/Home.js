@@ -6,6 +6,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import axios from 'axios';
 import "./home.css";
 import { useLocation } from "react-router-dom";
+import TopBar from "../../components/topbar/Topbar";
 
 export default function Home() {
    // baseURL
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <>
+    <TopBar/>
       <Header />
       <div className="home">
         <Donors donors={donors}/>   
