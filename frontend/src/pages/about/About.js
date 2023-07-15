@@ -1,8 +1,11 @@
 import React from 'react';
 import './about.css';
+import TopBar from '../../components/topbar/Topbar';
 
 function About() {
   return (
+    <div>
+    <TopBar/>
     <div className='about-contianer'>
         <h3>Food Donation Management</h3>
         <p>Food donation management is the process of efficiently collecting, distributing, and managing donated food to individuals or organizations in need. It involves coordinating the various stages of food donation, from collection to delivery, to ensure that the donated food reaches the intended beneficiaries in a timely and effective manner. This documentation provides an overview of food donation management and highlights its importance in addressing food insecurity and reducing food waste.</p>
@@ -28,6 +31,7 @@ function About() {
             </ul>
         </p>
         <p>Efficient food donation management is essential for addressing food insecurity, reducing food waste, and fostering social responsibility. By implementing best practices and following the key steps outlined in this documentation, organizations and individuals can effectively collect, distribute, and manage donated food, making a positive impact on their communities. With collaborative efforts, effective communication, and a focus on food safety and nutritional value, food donation management can contribute significantly to building stronger, more sustainable societies.</p>
+    </div>
     </div>
   );
 }

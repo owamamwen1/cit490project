@@ -1,0 +1,16 @@
+.SideMenuAndPageContent{
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: sticky
+    ;
+    background-color: rgba(0, 0, 0, 0.05) ;
+}
+.SideMenu{
+    height: 100%;
+    position: sticky;
+}
+.SideMenuVertical{
+    height: 100%;
+}

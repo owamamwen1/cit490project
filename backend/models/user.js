@@ -35,6 +35,7 @@ const UserSchema = new mongoose.Schema(
     profilePic: {
       type: String,
       default: "",
+      required: false,
     },
     phone: {
       type: Number,

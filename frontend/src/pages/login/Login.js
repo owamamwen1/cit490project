@@ -3,6 +3,7 @@ import { useContext, useState, useRef } from "react";
 import { Context } from "../../context/Context"
 import axios from "axios";
 import "./login.css";
+import TopBar from "../../components/topbar/Topbar";
 
 export default function Login() {
    // baseURL
@@ -37,6 +38,8 @@ export default function Login() {
   };
   
   return (
+    <div>
+    <TopBar/>
     <div className="login">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
@@ -50,6 +53,7 @@ export default function Login() {
       {/* <button className="loginRegisterButton">
         <Link className="link" to="/register">Register</Link>
       </button> */}
+    </div>
     </div>
   );
 }

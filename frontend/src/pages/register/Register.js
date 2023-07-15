@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 // import { Link } from "react-router-dom";
 import "./register.css";
+import TopBar from "../../components/topbar/Topbar";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -56,6 +57,8 @@ export default function Register() {
     }
   };
   return (
+    <div>
+      <TopBar/>
     <div className="register">
       <span className="registerTitle">Register</span>
       <form className="registerForm" onSubmit={handleSubmit}>
@@ -82,6 +85,7 @@ export default function Register() {
       {/* <button className="registerLoginButton">
       <Link className="link" to="/login">Login</Link>
       </button> */}
+      </div>
     </div>
   );
 }
