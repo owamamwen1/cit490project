@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { useContext, useState, useRef } from "react";
 import { Context } from "../../context/Context"
 import axios from "axios";
@@ -9,9 +8,12 @@ export default function Login() {
    // baseURL
   const HOST_BASE = "http://localhost:8080";
 
+  // form validation
   const userRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState('');
+  //
+
   const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e) => {
@@ -20,7 +22,6 @@ export default function Login() {
       setError('Please enter your username.');
       return;
     }
-
     if (passwordRef.current.value === '') {
       setError('Please enter your password.');
       return;
@@ -50,9 +51,6 @@ export default function Login() {
         {error && <p className="span">{error}</p>}
         <button className="loginButton" type="submit" disabled={isFetching} >Login</button>
       </form>
-      {/* <button className="loginRegisterButton">
-        <Link className="link" to="/register">Register</Link>
-      </button> */}
     </div>
     </div>
   );
