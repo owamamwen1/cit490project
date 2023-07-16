@@ -1,5 +1,5 @@
 # cit490project
-Food Donation management a web application that is useful for the management of food donation and collection activities.
+Food Donation Management is a web application that is useful for the management of food donation and collection activities.
 
 # Register new user
 <img width="492" alt="1" src="https://github.com/owamamwen1/cit490project/assets/90800458/cefe9b62-b0ef-4044-a33d-188790024480">
@@ -15,6 +15,15 @@ Food Donation management a web application that is useful for the management of 
 
 # view foods
 <img width="1417" alt="5" src="https://github.com/owamamwen1/cit490project/assets/90800458/1304eaaa-aaa4-43c5-b13b-1f13b92c47c9">
+
+# Edit food by donor user
+<img width="1407" alt="Screenshot 2023-07-16 at 15 25 17" src="https://github.com/owamamwen1/cit490project/assets/90800458/0711be71-791e-4055-a767-1ba308179935">
+
+# View other's donations no permission for edit
+<img width="1421" alt="Screenshot 2023-07-16 at 15 21 59" src="https://github.com/owamamwen1/cit490project/assets/90800458/31aeca63-aa13-4c2e-ae79-d7ddeadf6903">
+
+# Click the donor name to view all the donated foods
+<img width="1421" alt="Screenshot 2023-07-16 at 15 22 22" src="https://github.com/owamamwen1/cit490project/assets/90800458/ae83d0b9-1dfa-4415-88b9-19aaa454bb60">
 
 # Click Dashboard
 <img width="1307" alt="6" src="https://github.com/owamamwen1/cit490project/assets/90800458/3333adb4-994e-4818-b9c3-bf45e9bf46d1">
