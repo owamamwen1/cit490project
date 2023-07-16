@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import axios from "axios";
 import './writeDonor.css';
 import { Context } from '../../context/Context';
@@ -19,16 +19,45 @@ function WriteDonor() {
  
   const {user} = useContext(Context);
 
+  // form validation
+  const titleRef = useRef();
+  const descRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+  const [error, setError] = useState('');
+  //
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (titleRef.current.value === '') {
+      setError('Please enter your food title.');
+      return;
+    }
+    if (descRef.current.value === '') {
+      setError('Please enter your description.');
+      return;
+    }
+    var filteremaildonor = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filteremaildonor.test(email)) {
+      setError('Invalid email.');
+      return;
+    }
+    if (emailRef.current.value === '') {
+      setError('Please enter your email.');
+      return;
+    }
+    if (phoneRef.current.value === '') {
+      setError('Please enter your phone number.');
+      return;
+    }
     const newDonor = {
       username: user.username,
-      title,
-      desc,
+      title: titleRef.current.value,
+      desc: descRef.current.value,
      status,
      categories,
-     email,
-     phone,
+     email: emailRef.current.value,
+     phone: phoneRef.current.value,
      address,
      region,
      country,
@@ -73,12 +102,6 @@ function WriteDonor() {
       getCagetory();
   },[]);
 
-  //  const getInitialCat = () => {
-  //   const cat = [{name:"Pizza"}];
-  //   // const cat = "Pizza";
-  //   return cat;
-  // };
-
   const handleCategoryChange = (e) => {
     setCategories(e.target.value);
   };
@@ -95,7 +118,7 @@ function WriteDonor() {
           <div className='writeFormGroup'>
                 <label htmlFor='fileInput'><i className='writeIcon fas fa-plus'></i></label>
                 <input className='fileOutpit' type='file' name='' id='fileInput' onChange={(e)=> setFile(e.target.files[0])}/>
-                <input type='text' placeholder='title' className='writeInput' autoFocus={true} onChange={(e)=> setTitle(e.target.value)}/>
+                <input type='text' placeholder='title' className='writeInput' autoFocus={true} onChange={(e)=> setTitle(e.target.value)} ref={titleRef}/>
             </div>
             <div className='writeFormGroupSelect'>
             <select value={status} onChange={handleChange}>
@@ -109,14 +132,15 @@ function WriteDonor() {
                 </select>
             </div>
             <div className='writeFormGroup'>
-                <textarea placeholder='Please describe the food...' type='text' className='writeInput writeText' onChange={(e)=> setDesc(e.target.value)}></textarea>
+                <textarea placeholder='Please describe the food...' type='text' className='writeInput writeText' onChange={(e)=> setDesc(e.target.value)} ref={descRef}></textarea>
             </div>
             <div className='writeFormGroupColumn'>
-            <input type='email' placeholder='john@donor.com' className='writeInput' autoFocus={true} onChange={(e)=> setEmail(e.target.value)}/>
-            <input type='number' placeholder='343456545646' className='writeInput' autoFocus={true} onChange={(e)=> setPhone(e.target.value)}/>
+            <input type='email' placeholder='john@donor.com' className='writeInput' autoFocus={true} onChange={(e)=> setEmail(e.target.value)} ref={emailRef}/>
+            <input type='number' placeholder='343456545646' className='writeInput' autoFocus={true} onChange={(e)=> setPhone(e.target.value)} ref={phoneRef}/>
             <input type='text' placeholder='12 staint-merri, paris' className='writeInput' autoFocus={true} onChange={(e)=> setAddress(e.target.value)}/>
             <input type='text' placeholder='Île-de-France' className='writeInput' autoFocus={true} onChange={(e)=> setRegion(e.target.value)}/>
             <input type='text' placeholder='France' className='writeInput' autoFocus={true} onChange={(e)=> setCountry(e.target.value)}/>
+            {error && <p className="span">{error}</p>}
             </div>
             <div className='writeFormGroup'>
             <button className='writeSubmit' type='submit'>Publish</button>
