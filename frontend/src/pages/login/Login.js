@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { useContext, useState, useRef } from "react";
 import { Context } from "../../context/Context"
 import axios from "axios";
@@ -14,7 +13,7 @@ export default function Login() {
   const passwordRef = useRef();
   const [error, setError] = useState('');
   //
-  
+
   const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e) => {
@@ -23,7 +22,6 @@ export default function Login() {
       setError('Please enter your username.');
       return;
     }
-
     if (passwordRef.current.value === '') {
       setError('Please enter your password.');
       return;
